@@ -64,3 +64,11 @@ variable "vm_admin_password" {
   type      = string
   sensitive = true
 }
+
+variable "databricks_workspace_name" {
+  type = string
+}
+
+variable "databricks_managed_rg_name" {
+  type = string
+}

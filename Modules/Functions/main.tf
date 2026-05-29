@@ -10,13 +10,14 @@ resource "azurerm_service_plan" "this" {
 resource "azurerm_linux_function_app" "this" {
   count = var.os_type == "Linux" ? 1 : 0
 
-  name                       = var.name
-  location                   = var.location
-  resource_group_name        = var.resource_group_name
-  service_plan_id            = azurerm_service_plan.this.id
-  storage_account_name       = var.storage_account_name
-  storage_account_access_key = var.storage_account_access_key
-  tags                       = var.tags
+  name                          = var.name
+  location                      = var.location
+  resource_group_name           = var.resource_group_name
+  service_plan_id               = azurerm_service_plan.this.id
+  storage_account_name          = var.storage_account_name
+  storage_account_access_key    = var.storage_account_access_key
+  public_network_access_enabled = false
+  tags                          = var.tags
 
   site_config {
     application_stack {
@@ -34,13 +35,14 @@ resource "azurerm_linux_function_app" "this" {
 resource "azurerm_windows_function_app" "this" {
   count = var.os_type == "Windows" ? 1 : 0
 
-  name                       = var.name
-  location                   = var.location
-  resource_group_name        = var.resource_group_name
-  service_plan_id            = azurerm_service_plan.this.id
-  storage_account_name       = var.storage_account_name
-  storage_account_access_key = var.storage_account_access_key
-  tags                       = var.tags
+  name                          = var.name
+  location                      = var.location
+  resource_group_name           = var.resource_group_name
+  service_plan_id               = azurerm_service_plan.this.id
+  storage_account_name          = var.storage_account_name
+  storage_account_access_key    = var.storage_account_access_key
+  public_network_access_enabled = false
+  tags                          = var.tags
 
   site_config {
     application_stack {
