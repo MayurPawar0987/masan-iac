@@ -36,17 +36,10 @@ variable "admin_username" {
   description = "Admin username"
 }
 
-variable "admin_ssh_public_key" {
-  type        = string
-  default     = ""
-  description = "SSH public key (Linux VMs)"
-}
-
 variable "admin_password" {
   type        = string
-  default     = ""
   sensitive   = true
-  description = "Admin password (Windows VMs)"
+  description = "Admin password for the VM"
 }
 
 variable "os_disk_type" {

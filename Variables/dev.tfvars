@@ -1,8 +1,3 @@
-subscription_id = ""  
-client_id       = ""   
-client_secret   = ""   
-tenant_id       = "" 
-
 environment = "dev"
 location    = "eastus"
 project     = "masan"
@@ -27,7 +22,6 @@ subnets = {
 storage_account_name      = "stmasandev001"
 key_vault_name            = "kv-masan-dev-001"
 data_factory_name         = "adf-masan-dev"
-databricks_workspace_name = "dbw-masan-dev"
 function_app_name         = "func-masan-dev"
 app_service_name          = "app-masan-dev"
 vm_name                   = "vm-masan-dev-001"

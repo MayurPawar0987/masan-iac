@@ -22,7 +22,6 @@ subnets = {
 storage_account_name      = "stmasanprod001"
 key_vault_name            = "kv-masan-prod-001"
 data_factory_name         = "adf-masan-prod"
-databricks_workspace_name = "dbw-masan-prod"
 function_app_name         = "func-masan-prod"
 app_service_name          = "app-masan-prod"
 vm_name                   = "vm-masan-prod-001"

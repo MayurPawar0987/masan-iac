@@ -55,10 +55,8 @@ jobs:
         run: |
           terraform plan -input=false \
             -var-file="../Variables/${{ github.event.inputs.environment }}.tfvars" \
-            # -var="vm_linux_admin_username=${{ secrets.VM_LINUX_ADMIN_USERNAME }}" \
-            # -var="vm_linux_admin_password=${{ secrets.VM_LINUX_ADMIN_PASSWORD }}" \
-            # -var="vm_windows_admin_username=${{ secrets.VM_WINDOWS_ADMIN_USERNAME }}" \
-            # -var="vm_windows_admin_password=${{ secrets.VM_WINDOWS_ADMIN_PASSWORD }}" \
+            -var="vm_admin_username=${{ secrets.VM_ADMIN_USERNAME }}" \
+            -var="vm_admin_password=${{ secrets.VM_ADMIN_PASSWORD }}" \
             -out=tfplan
 
       - name: Upload Plan Artifact

@@ -91,12 +91,12 @@ module "function_app" {
 module "virtual_machine" {
   source = "../Modules/VirtualMachine"
 
-  name                  = var.vm_name
-  location              = var.location
-  resource_group_name   = module.resource_group.name
-  subnet_id             = module.virtual_network.subnet_ids["snet-app"]
-  admin_username        = var.admin_username
-  admin_ssh_public_key  = var.admin_ssh_public_key
+  name                = var.vm_name
+  location            = var.location
+  resource_group_name = module.resource_group.name
+  subnet_id           = module.virtual_network.subnet_ids["snet-app"]
+  admin_username      = var.vm_admin_username
+  admin_password      = var.vm_admin_password
 
   tags = var.tags
 }

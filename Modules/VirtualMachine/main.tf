@@ -19,14 +19,10 @@ resource "azurerm_linux_virtual_machine" "this" {
   resource_group_name             = var.resource_group_name
   size                            = var.vm_size
   admin_username                  = var.admin_username
-  disable_password_authentication = true
+  admin_password                  = var.admin_password
+  disable_password_authentication = false
   network_interface_ids           = [azurerm_network_interface.this.id]
   tags                            = var.tags
-
-  admin_ssh_key {
-    username   = var.admin_username
-    public_key = var.admin_ssh_public_key
-  }
 
   os_disk {
     caching              = "ReadWrite"

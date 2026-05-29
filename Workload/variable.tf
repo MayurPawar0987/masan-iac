@@ -43,10 +43,6 @@ variable "data_factory_name" {
   type = string
 }
 
-variable "databricks_workspace_name" {
-  type = string
-}
-
 variable "function_app_name" {
   type = string
 }
@@ -59,12 +55,12 @@ variable "vm_name" {
   type = string
 }
 
-variable "admin_username" {
-  type    = string
-  default = "azureuser"
+variable "vm_admin_username" {
+  type      = string
+  sensitive = true
 }
 
-variable "admin_ssh_public_key" {
+variable "vm_admin_password" {
   type      = string
   sensitive = true
 }
