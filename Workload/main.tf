@@ -89,6 +89,7 @@ module "function_app" {
   resource_group_name        = module.resource_group.name
   storage_account_name       = module.storage_account.name
   storage_account_access_key = module.storage_account.primary_access_key
+  sku_name                   = "EP1"
 
   app_settings = {
     FUNCTIONS_WORKER_RUNTIME = "python"
