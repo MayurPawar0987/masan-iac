@@ -10,12 +10,11 @@ on:
         type: choice
         options:
           - dev
-          - uat
           - prod
 
 env:
   TF_VERSION: '1.10.5'
-  TF_WORKING_DIR: './workload'
+  TF_WORKING_DIR: './Workload'
 
 jobs:
   plan:
