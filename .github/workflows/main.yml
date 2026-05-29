@@ -54,7 +54,7 @@ jobs:
         working-directory: ${{ env.TF_WORKING_DIR }}
         run: |
           terraform plan -input=false \
-            -var-file="../variables/${{ github.event.inputs.environment }}.tfvars" \
+            -var-file="../Variables/${{ github.event.inputs.environment }}.tfvars" \
             # -var="vm_linux_admin_username=${{ secrets.VM_LINUX_ADMIN_USERNAME }}" \
             # -var="vm_linux_admin_password=${{ secrets.VM_LINUX_ADMIN_PASSWORD }}" \
             # -var="vm_windows_admin_username=${{ secrets.VM_WINDOWS_ADMIN_USERNAME }}" \
