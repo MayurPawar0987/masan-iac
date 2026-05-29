@@ -13,7 +13,7 @@ resource "azurerm_key_vault" "this" {
 
   network_acls {
     default_action             = var.network_default_action
-    bypass                     = ["AzureServices"]
+    bypass                     = "AzureServices"
     ip_rules                   = var.allowed_ip_rules
     virtual_network_subnet_ids = var.allowed_subnet_ids
   }
