@@ -30,9 +30,9 @@ variable "security_rules" {
 }
 
 variable "subnet_ids" {
-  type        = list(string)
-  default     = []
-  description = "Subnet IDs to associate this NSG with"
+  type        = map(string)
+  default     = {}
+  description = "Map of static name => subnet ID to associate this NSG with. Static keys are required so Terraform can resolve for_each at plan time."
 }
 
 variable "tags" {

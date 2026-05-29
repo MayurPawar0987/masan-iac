@@ -23,10 +23,10 @@ module "nsg_databricks" {
   name                = "nsg-${var.project}-${var.environment}-databricks"
   location            = var.location
   resource_group_name = module.resource_group.name
-  subnet_ids = [
-    module.virtual_network.subnet_ids["snet-databricks-public"],
-    module.virtual_network.subnet_ids["snet-databricks-private"],
-  ]
+  subnet_ids = {
+    "snet-databricks-public"  = module.virtual_network.subnet_ids["snet-databricks-public"]
+    "snet-databricks-private" = module.virtual_network.subnet_ids["snet-databricks-private"]
+  }
   tags = var.tags
 }
 
@@ -120,8 +120,8 @@ module "databricks" {
   virtual_network_id                = module.virtual_network.id
   private_subnet_name               = "snet-databricks-private"
   public_subnet_name                = "snet-databricks-public"
-  private_subnet_nsg_association_id = module.nsg_databricks.subnet_association_ids[module.virtual_network.subnet_ids["snet-databricks-private"]]
-  public_subnet_nsg_association_id  = module.nsg_databricks.subnet_association_ids[module.virtual_network.subnet_ids["snet-databricks-public"]]
+  private_subnet_nsg_association_id = module.nsg_databricks.subnet_association_ids["snet-databricks-private"]
+  public_subnet_nsg_association_id  = module.nsg_databricks.subnet_association_ids["snet-databricks-public"]
   tags                              = var.tags
 }
 
