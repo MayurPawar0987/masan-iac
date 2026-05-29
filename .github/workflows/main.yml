@@ -50,6 +50,13 @@ jobs:
         working-directory: ${{ env.TF_WORKING_DIR }}
         run: terraform validate
 
+      - name: Check VM Username
+        run: |
+          echo "Length: ${#VM_ADMIN_USERNAME}"
+          echo "Starts with: ${VM_ADMIN_USERNAME:0:3}"
+        env:
+          VM_ADMIN_USERNAME: ${{ secrets.VM_ADMIN_USERNAME }}
+
       - name: Terraform Plan
         working-directory: ${{ env.TF_WORKING_DIR }}
         run: |
