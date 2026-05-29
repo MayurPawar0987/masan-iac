@@ -39,12 +39,6 @@ module "storage_account" {
   account_tier             = "Standard"
   account_replication_type = "LRS"
   tags                     = var.tags
-
-  containers = {
-    tfstate = {
-      access_type = "private"
-    }
-  }
 }
 
 module "key_vault" {
